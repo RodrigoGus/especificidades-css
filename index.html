@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Especificidades CSS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Archivo+Narrow:wght@500&family=Asset&display=swap');
+    </style>
+</head>
+<body>
+    <aside>
+        <nav>
+            <ul>
+                <li class="botao"><a href="#conceito">O que são Seletores de Especificidade</a></li>
+                <li class="botao"><a href="#utilidade">Principais Tipos de Seletores</a></li>
+                <li class="botao"><a href="#calculo">Como são Calculados</a></li>
+                <li class="botao"><a href="#tipoCSS">CSS Externo & Inline</a></li>
+                <li class="botao"><a href="#ordem">Ordem de Aplicação</a></li>
+                <li class="botao"><a href="#important">!Important Value</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section>
+        <header>
+          <div id="linha-vertical"></div>
+          <div>
+            <h1 class="titulo">CSS</h1>
+            <h2 class="sub-titulo">Especificidade</h2>
+            <div id="barra-header"></div> 
+          </div>
+        </header>
+        <h1 id="conceito">O que são Seletores de Especificidade</h1>
+        <div class="linha-horizontal"></div>
+        <div class="cointainer-parte1">
+            <p>Os seletores de especificidade no CSS são mecanismos que determinam a prioridade de aplicação da estilização em elementos HTML. Eles dizem respeito ao quão específico você está sendo ao estilizar algo no seu código. Ajudam a definir qual estilo deve ser aplicado a um elemento específico, levando em consideração a força e a hierarquia dos seletores.</p>
+        </div>
+        <h2>Para que servem os seletores de especificidade?</h2>
+        <div class="cointainer-parte1">
+            <p>Os seletores de especificidade no CSS são mecanismos que determinam a prioridade de aplicação da estilização em elementos HTML. Eles dizem respeito ao quão específico você está sendo ao estilizar algo no seu código. Ajudam a definir qual estilo deve ser aplicado a um elemento específico, levando em consideração a força e a hierarquia dos seletores.</p>
+        </div>
+    </section>
+
+    <section>
+        <h1 id="utilidade">Principais Tipos de Seletores, dos menos aos mais específicos:</h1>
+        <div class="linha-horizontal"></div>
+        <h2>Seletores de elementos e pseudo-elementos:</h2>
+        <div class="cointainer-parte1">
+            <h3>Exemplo: p, div, h1, etc.</h3>
+            <p>São os seletores mais genéricos, selecionam elementos com base em seu tipo (tag). Têm a menor especificidade.</p>
+        </div>
+            <h2>Seletores de classe, atributo e pseudo-classes:</h2>
+        <div class="cointainer-parte1">
+            <h3>Exemplo: .classe</h3>
+            <p>Selecionam elementos com base em uma classe atribuída. Têm uma especificidade maior do que os seletores de tipo.</p>
+        </div>
+        <h2>Seletores de ID:</h2>
+        <div class="cointainer-parte1">
+            <h3>Exemplo: #id</h3>
+            <p>Selecionam elementos com base em um ID específico atribuído. Têm uma especificidade ainda maior do que os seletores de classe.</p>
+        </div>
+        </section>
+
+        <section>
+            <div class="section-container"></div>
+            <h1 class="topico" id="calculo">como são calculados</h1>
+            <div class="linha-horizontal"></div>
+            <p class="texto-alter">Os seletores possuem um número que define a sua prioridade e importância antes de ser considerado à aplicação. O cálculo de especificidade é uma combinação desses três tipos de seletores, que gera algo mais ou menos assim:<br></br>
+            (0. 0. 0)<br></br>
+            Esses números representam, respectivamente a quantidade de ID’s, classes e elementos no arquivo CSS. Os números a esquerda sempre terão mais prioridade que os da esquerda, então os números são analisados para assim determinar qual o seletor mais específico (terá mais prioridade) no momento da aplicação.</p>
+        </section>
+
+        <section>
+            <h1 class="asset">Exemplos:</h1>
+            <h1 class="num-ex">01</h1>
+            <div class="fundo-cinza">
+                <div class="container-ex">
+                    <p class="p-ex">Neste exemplo podemos ver que os três diferentes tipos de estilização afetariam o nosso parágrafo, contudo apenas um deles será categoricamente aplicado. O #id! Podemos afirmar isso, pois os ID’s são os que possuem maior prioridade e possuem o digito, diferente de zero, mais à esquerda.
+                    </p>
+                </div>
+                <div>
+                    <h1>HTML:</h1>
+                    <img class="img-ex" src="img/ex1_-_html-removebg-preview.png" alt="exemplo html 1">
+                    <h1>CSS:</h1>
+                    <img class="img-ex" src="img/ex1-_css-removebg-preview.png" alt="exemplo css 1">
+                </div>
+            </div>
+            <h1 class="num-ex">02</h1>
+            <div class="fundo-cinza">
+                <div class="container-ex">
+                    <p class="p-ex">Já neste exemplo, podemos ver que o parágrafo possui agora não um, mas duas classes e o mesmo ID singular. Contudo, podemos notar que, ao verificarmos empiricamente, a cor que será aplicada ao parágrafo é a cor azul. Isso acontece, pois, neste caso, ao calcular a especificidade, não levaremos em consideração o número de vezes que seletores de mesma prioridade aparecem e sim apenas se aparece uma única vez ou não.
+                    Como superar a prioridade de um ID?
+                    Mesmo que os ID’s sempre tenham a maior prioridade, existem formas de superá-los neste quesito. Segue exemplo abaixo:
+                    </p>
+                </div>
+                <div>
+                    <h1>HTML:</h1>
+                    <img class="img-ex" src="img/ex2_-_html-removebg-preview.png" alt="exemplo html 2">
+                    <h1>CSS:</h1>
+                    <img class="img-ex" src="img/ex2-_css-removebg-preview.png" alt="exemplo css 2">
+                </div>
+            </div>
+            <h1 class="num-ex">03</h1>
+            <div class="fundo-cinza">
+                <div class="container-ex">
+                    <p class="p-ex">Aqui veremos que a cor vermelha seria a aplicada, pois não estamos apenas usufruindo do nível de prioridade dos ID’s, e sim os juntando também aos níveis de prioridade das classes. Ou seja, assim podemos concluir que:<br><br>
+                        (1. 1. 0) > (1. 0. 0)<br><br>
+                        Vejamos mais alguns exemplos.<br><br>
+                        (0, 2, 0) > (0, 0, 20)<br>
+                        (1, 7, 0) > (0, 5, 0)<br>
+                        (1, 7, 0) > (1, 5, 3)<br>
+                        (1, 7, 3) > (1, 7, 0)
+                    </p>
+                </div>
+                <div>
+                    <h1>HTML:</h1>
+                    <img class="img-ex" src="img/ex3_-_html-removebg-preview.png" alt="exemplo html 3">
+                    <h1>CSS:</h1>
+                    <img class="img-ex" src="img/ex3-_css-removebg-preview.png" alt="exemplo css 3">
+                </div>
+            </div>
+        </section>
+        <section >
+            <div class="section-container2"> </div>
+            <h1 class="topico" id="tipoCSS">CSS Externo & Inline</h1>
+            <div class="linha-horizontal"></div>
+            <p class="texto-alter">Outro fator a ser levado em consideração é onde está código CSS está sendo aplicado e em qual ordem. Também existe uma lista que ordena qual código CSS terá mais prioridade dependendo de onde será aplicado, sendo, os com menor para maior prioridade, os seguintes: <br>
+            Outro fator a ser levado em consideração é onde está código CSS está sendo aplicado e em qual ordem. Também existe uma lista que ordena qual código CSS terá mais prioridade dependendo de onde será aplicado, sendo, os com menor para maior prioridade, os seguintes:</p>
+            <h2 class="asset-ex">Herança HTML</h2>
+            <div class="bg-cinza">
+                <img src="img/herança-removebg-preview.png">
+                <h2 class="asset-ex">Inline Attributes HTML</h2>
+                <img src="img/inline_attributes-removebg-preview.png">
+                <h2 class="asset-ex">CSS Embutido/CSS Externo HTML</h2>
+                <img src="img/css_embutido-removebg-preview.png">
+                <img src="img/css_externo-removebg-preview.png">
+                <h2 class="asset-ex">Inline CSS HTML</h2>
+                <img src="img/css_inline-removebg-preview.png">
+            </div>
+        </section>
+
+        <section class="bg-cinza">
+            <h1 class="topico" id="ordem">Ordem de Aplicação</h1>
+            <div class="linha-horizontal"></div>
+            <p class="texto-alter">Agora, para explicar o fator de ordem de aplicação, dizemos que caso o mesmo seletor seja “chamado” duas vezes, por exemplo:</p>
+            <img src="img/fator_de_ordem_de_aplicação-removebg-preview.png">
+            <p class="texto-alter">Aquele efetivamente aplicado será o que foi “chamado” por último, neste caso, o que deixara a cor do parágrafo branco, já que os códigos são todos lidos da esquerda para a direita e de cima para baixo, portanto, sendo `color: white` o último a ser “lido”.</p>
+        </section>
+
+        <section class="bg-cinza">
+            <h1 class="topico" id="important">!Important Value</h1>
+            <div class="linha-horizontal"></div>
+            <p class="texto-alter">O CSS disponibiliza uma forma de "burlar" os níveis de especificidade através da palavra-chave !important</p>
+            <img src="img/_important_value-removebg-preview.png">
+            <p class="texto-alter">O estilo que for marcado juntamente com essa palavra-chave terá prioridade acima dos outros seletores, mas respeitando o comportamento de cascata mencionado anteriormente.</p>
+        </section>
+</body>
