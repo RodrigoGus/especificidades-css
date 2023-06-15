@@ -157,9 +157,10 @@ h1#calculo{
     color: white;
     padding-left: 10%;
     padding-right: 10%;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
+    height: 100vh;
 }
 .img-ex{
     width: 60%;
@@ -179,7 +180,7 @@ h1#calculo{
 }
 .section-container2{
     position: relative;
-    left: 20%;
+    left: -10%;
 }
 .section-container2::before{
     content: "";
@@ -193,7 +194,7 @@ h1#calculo{
     margin-bottom: 10px;
 }
 .section-container2::before{
-    transform: skewX(-75deg);
+    transform: skewX(-60deg);
     left: 0;
 }
 .asset{
