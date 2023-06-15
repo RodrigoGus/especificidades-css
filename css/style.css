@@ -152,8 +152,7 @@ h1#calculo{
 .p-ex{
     display: flex;
     align-items: center; 
-    justify-content: center; 
-    height: 100vh; 
+    justify-content: center;
     text-align: justify;
     color: white;
     padding-left: 10%;
@@ -194,7 +193,7 @@ h1#calculo{
     margin-bottom: 10px;
 }
 .section-container2::before{
-    transform: skewX(-45deg);
+    transform: skewX(-75deg);
     left: 0;
 }
 .asset{
